@@ -18,6 +18,9 @@ const connection = mongoose.connect(config.MONGO_URI, {
 app.use(express.json());
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 app.use("/api/users", usersRouter);
 app.use("/api/pets", petsRouter);
 app.use("/api/adoptions", adoptionsRouter);
